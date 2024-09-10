@@ -27,11 +27,11 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 
 // project imports
 import MainCard from '@/ui-component/cards/MainCard'
-import AboutDialog from '@/ui-component/dialog/AboutDialog'
+// import AboutDialog from '@/ui-component/dialog/AboutDialog'
 import Transitions from '@/ui-component/extended/Transitions'
 
 // assets
-import { IconFileExport, IconFileUpload, IconInfoCircle, IconLogout, IconSettings, IconX } from '@tabler/icons-react'
+import { IconFileExport, IconFileUpload, IconLogout, IconSettings, IconX } from '@tabler/icons-react'
 import './index.css'
 
 //API
@@ -49,7 +49,7 @@ const ProfileSection = ({ username, handleLogout }) => {
     const customization = useSelector((state) => state.customization)
 
     const [open, setOpen] = useState(false)
-    const [aboutDialogOpen, setAboutDialogOpen] = useState(false)
+    // const [aboutDialogOpen, setAboutDialogOpen] = useState(false)
 
     const anchorRef = useRef(null)
     const inputRef = useRef()
@@ -278,7 +278,7 @@ const ProfileSection = ({ username, handleLogout }) => {
                                                     <ListItemText primary={<Typography variant='body2'>Import Chatflows</Typography>} />
                                                 </ListItemButton>
                                                 <input ref={inputRef} type='file' hidden onChange={fileChange} />
-                                                <ListItemButton
+                                                {/* <ListItemButton
                                                     sx={{ borderRadius: `${customization.borderRadius}px` }}
                                                     onClick={() => {
                                                         setOpen(false)
@@ -289,7 +289,7 @@ const ProfileSection = ({ username, handleLogout }) => {
                                                         <IconInfoCircle stroke={1.5} size='1.3rem' />
                                                     </ListItemIcon>
                                                     <ListItemText primary={<Typography variant='body2'>About Flowise</Typography>} />
-                                                </ListItemButton>
+                                                </ListItemButton> */}
                                                 {localStorage.getItem('username') && localStorage.getItem('password') && (
                                                     <ListItemButton
                                                         sx={{ borderRadius: `${customization.borderRadius}px` }}
@@ -310,7 +310,7 @@ const ProfileSection = ({ username, handleLogout }) => {
                     </Transitions>
                 )}
             </Popper>
-            <AboutDialog show={aboutDialogOpen} onCancel={() => setAboutDialogOpen(false)} />
+            {/* <AboutDialog show={aboutDialogOpen} onCancel={() => setAboutDialogOpen(false)} /> */}
         </>
     )
 }
